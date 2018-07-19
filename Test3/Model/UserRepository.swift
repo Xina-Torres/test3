@@ -11,6 +11,6 @@ class UserRepository{
     var user = [UserDataModel]()
     func getUserInformation(){
         var userDataModel = UserDataModel()
-        userDataModel.firstName
+//        userDataModel.firstName = 
     }
 }

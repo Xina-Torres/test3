@@ -20,19 +20,9 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
-//    var userInfoPresenter : UserInfoPresenter = UserInfoPresenter()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        firstNameLabel.text = firstName
-//        middleNameLabel.text = middleName
-//        lastNameLabel.text = lastName
-//        addressLabel.text = address
-//        ageLabel.text = age
-//        heightLabel.text = height
-//        weightLabel.text = weight
-//        birthdayLabel.text = birthday
-//        genderLabel.text = gender
-//        userInfoPresenter.attachedView(view: self)
+
     }
    
 }

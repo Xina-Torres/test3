@@ -1,23 +1,18 @@
-//
-//  UserInfoPresenter.swift
-//  Test3
-//
-//  Created by Maria Xina Rae Torres on 13/07/2018.
-//  Copyright © 2018 Maria Xina Rae Torres. All rights reserved.
-//
-
 import Foundation
-protocol UserInfoView: PresenterView{
-    
+protocol UserInfoPresenterDelegate{
+    func showUserInfo(_ user: [UserDataModel])
 }
-enum UserInfoLabel {
-    case firstName
-    case middleName
-    case lastName
-    case address
-    case age
-    case height
-    case weight
-    case birthday
-    case gender
+class UserInfoPresenter{
+    // MARK: - Properties
+    
+    var userRepository: UserRepository
+    var view: UserInfoPresenterDelegate
+    
+    // MARK: - Functions
+    
+    required init(view: UserInfoPresenterDelegate, userRepository: UserRepository){
+        self.view = view
+        self.userRepository = userRepository
+    }
+    
 }

@@ -11,10 +11,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var birthdayTextfield: UITextField!
     @IBOutlet weak var genderTextfield: UITextField!
     @IBOutlet weak var registerButton: UIButton!
-    var registerPresenter: RegisterPresenter = RegisterPresenter()
+    var registerPresenter: RegisterPresenter!
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerPresenter.attachedView(view: self)
         firstNameTextfield.delegate = self
         middleNameTextfield.delegate = self
         lastNameTextfield.delegate = self
@@ -41,19 +40,10 @@ class RegisterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSegue"{
             let userInfoViewController = segue.destination as! UserInfoViewController
-            userInfoViewController.firstName = registerPresenter.firstName
-            userInfoViewController.middleName = registerPresenter.middleName
-            userInfoViewController.lastName = registerPresenter.lastName
-            userInfoViewController.address = registerPresenter.address
-            userInfoViewController.age = registerPresenter.age
-            userInfoViewController.height = registerPresenter.height
-            userInfoViewController.weight = registerPresenter.weight
-            userInfoViewController.birthday = registerPresenter.birthday
-            userInfoViewController.gender = registerPresenter.gender
-        }
+            }
     }
 }
-extension RegisterViewController: RegisterView{
+extension RegisterViewController: RegisterPresenterDelegate{
     func didFailGettingFirstName() {
         let alertFirstName = UIAlertController(title: "First Name Missing", message: "Please enter first name.", preferredStyle: .alert)
         alertFirstName.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in

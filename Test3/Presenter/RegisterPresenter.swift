@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol RegisterView: PresenterView{
+protocol RegisterPresenterDelegate{
     func didFailGettingFirstName()
     func didFailGettingMiddleName()
     func didFailGettingLastName()
@@ -29,7 +29,7 @@ enum RegisterTextField {
     case birthday
     case gender
 }
-class RegisterPresenter: Presenter{
+class RegisterPresenter{
     var firstName: String?
     var middleName: String?
     var lastName: String?
@@ -39,55 +39,58 @@ class RegisterPresenter: Presenter{
     var weight: String?
     var birthday: String?
     var gender: String?
+    var userRepository: UserRepository
+    var view: RegisterPresenterDelegate
+    required init(view: RegisterPresenterDelegate, userRepository: UserRepository){
+        self.view = view
+        self.userRepository = userRepository
+    }
     func register(){
         if firstName == nil || firstName?.isEmpty == true{
-            getView()?.didFailGettingFirstName()
+            view.didFailGettingFirstName()
         }else{
             setValues(registerTextField: RegisterTextField.firstName, input: firstName!)
         }
         if middleName == nil || middleName?.isEmpty == true{
-            getView()?.didFailGettingMiddleName()
+            view.didFailGettingMiddleName()
         }else{
             setValues(registerTextField: RegisterTextField.middleName, input: middleName!)
         }
         if lastName == nil || lastName?.isEmpty == true{
-            getView()?.didFailGettingLastName()
+            view.didFailGettingLastName()
         }else{
             setValues(registerTextField: RegisterTextField.lastName, input: lastName!)
         }
         if address == nil || address?.isEmpty == true{
-            getView()?.didFailGettingAddress()
+            view.didFailGettingAddress()
         }else{
             setValues(registerTextField: RegisterTextField.address, input: address!)
         }
         if age == nil || age?.isEmpty == true{
-            getView()?.didFailGettingAge()
+            view.didFailGettingAge()
         }else{
             setValues(registerTextField: RegisterTextField.age, input: age!)
         }
         if height == nil || height?.isEmpty == true{
-            getView()?.didFailGettingHeight()
+            view.didFailGettingHeight()
         }else{
             setValues(registerTextField: RegisterTextField.height, input: height!)
         }
         if weight == nil || weight?.isEmpty == true{
-            getView()?.didFailGettingWeight()
+            view.didFailGettingWeight()
         }else{
             setValues(registerTextField: RegisterTextField.weight, input: weight!)
         }
         if birthday == nil || birthday?.isEmpty == true{
-            getView()?.didFailGettingBirthday()
+            view.didFailGettingBirthday()
         }else{
             setValues(registerTextField: RegisterTextField.birthday, input: birthday!)
         }
         if gender == nil || gender?.isEmpty == true{
-            getView()?.didFailGettingGender()
+            view.didFailGettingGender()
         }else{
             setValues(registerTextField: RegisterTextField.gender, input: gender!)
         }
-    }
-    func getView() -> RegisterView?{
-        return view as? RegisterView
     }
     func setValues(registerTextField: RegisterTextField, input: String){
         switch registerTextField{
