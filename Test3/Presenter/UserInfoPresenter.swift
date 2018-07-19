@@ -10,3 +10,14 @@ import Foundation
 protocol UserInfoView: PresenterView{
     
 }
+enum UserInfoLabel {
+    case firstName
+    case middleName
+    case lastName
+    case address
+    case age
+    case height
+    case weight
+    case birthday
+    case gender
+}

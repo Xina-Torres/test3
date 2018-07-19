@@ -23,24 +23,16 @@ class UserInfoViewController: UIViewController {
 //    var userInfoPresenter : UserInfoPresenter = UserInfoPresenter()
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstNameLabel.text = firstName
-        middleNameLabel.text = middleName
-        lastNameLabel.text = lastName
-        addressLabel.text = address
-        ageLabel.text = age
-        heightLabel.text = height
-        weightLabel.text = weight
-        birthdayLabel.text = birthday
-        genderLabel.text = gender
+//        firstNameLabel.text = firstName
+//        middleNameLabel.text = middleName
+//        lastNameLabel.text = lastName
+//        addressLabel.text = address
+//        ageLabel.text = age
+//        heightLabel.text = height
+//        weightLabel.text = weight
+//        birthdayLabel.text = birthday
+//        genderLabel.text = gender
 //        userInfoPresenter.attachedView(view: self)
     }
-    var firstName: String?
-    var middleName: String?
-    var lastName: String?
-    var address: String?
-    var age: String?
-    var height: String?
-    var weight: String?
-    var birthday: String?
-    var gender: String?
+   
 }
