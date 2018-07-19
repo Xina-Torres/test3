@@ -22,7 +22,7 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var genderLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
     }
    
 }

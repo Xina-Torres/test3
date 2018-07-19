@@ -1,5 +1,4 @@
 import UIKit
-
 class RegisterViewController: UIViewController {
     @IBOutlet weak var firstNameTextfield: UITextField!
     @IBOutlet weak var middleNameTextfield: UITextField!
@@ -23,6 +22,7 @@ class RegisterViewController: UIViewController {
         weightTextfield.delegate = self
         birthdayTextfield.delegate = self
         genderTextfield.delegate = self
+        registerPresenter = RegisterPresenter(view: self, userDataModel: UserDataModel())
         firstNameTextfield.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
         middleNameTextfield.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
         lastNameTextfield.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
@@ -40,6 +40,7 @@ class RegisterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSegue"{
             let userInfoViewController = segue.destination as! UserInfoViewController
+                
             }
     }
 }
@@ -151,40 +152,39 @@ extension RegisterViewController: UITextFieldDelegate{
     }
     @objc func textFieldDidChange(_ textField: UITextField){
         if (textField == firstNameTextfield){
-            firstNameTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.firstName, input: firstNameTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.firstName, input: textField.text ?? "")
         }
         if (textField == middleNameTextfield){
             middleNameTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.middleName, input: middleNameTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.middleName, input: textField.text ?? "")
         }
         if (textField == lastNameTextfield){
             lastNameTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.lastName, input: lastNameTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.lastName, input: textField.text ?? "")
         }
         if (textField == addressTextfield){
             addressTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.address, input: addressTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.address, input: textField.text ?? "")
         }
         if (textField == ageTextfield){
             ageTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.age, input: ageTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.age, input: textField.text ?? "")
         }
         if (textField == heightTextfield){
             heightTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.height, input: heightTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.height, input: textField.text ?? "")
         }
         if (textField == weightTextfield){
             weightTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.weight, input: weightTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.weight, input: textField.text ?? "")
         }
         if (textField == birthdayTextfield){
             birthdayTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.birthday, input: birthdayTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.birthday, input: textField.text ?? "")
         }
         if (textField == genderTextfield){
             genderTextfield.text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            registerPresenter.setValues(registerTextField: RegisterTextField.gender, input: genderTextfield.text!)
+            registerPresenter.setValues(registerTextField: RegisterTextField.gender, input: textField.text ?? "")
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

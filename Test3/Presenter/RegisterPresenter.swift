@@ -39,11 +39,11 @@ class RegisterPresenter{
     var weight: String?
     var birthday: String?
     var gender: String?
-    var userRepository: UserRepository
+    var userDataModel: UserDataModel
     var view: RegisterPresenterDelegate
-    required init(view: RegisterPresenterDelegate, userRepository: UserRepository){
+    required init(view: RegisterPresenterDelegate, userDataModel: UserDataModel){
         self.view = view
-        self.userRepository = userRepository
+        self.userDataModel = userDataModel
     }
     func register(){
         if firstName == nil || firstName?.isEmpty == true{

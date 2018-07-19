@@ -5,14 +5,13 @@ protocol UserInfoPresenterDelegate{
 class UserInfoPresenter{
     // MARK: - Properties
     
-    var userRepository: UserRepository
+    var userDataModel: UserDataModel
     var view: UserInfoPresenterDelegate
     
     // MARK: - Functions
     
-    required init(view: UserInfoPresenterDelegate, userRepository: UserRepository){
+    required init(view: UserInfoPresenterDelegate, userDataModel: UserDataModel){
         self.view = view
-        self.userRepository = userRepository
+        self.userDataModel = userDataModel
     }
-    
 }

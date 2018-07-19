@@ -16,7 +16,6 @@
 		8F1A8EA620F887F5000DF4B4 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A8EA520F887F5000DF4B4 /* RegisterPresenter.swift */; };
 		8F1A8EA820F88947000DF4B4 /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A8EA720F88947000DF4B4 /* UserInfoPresenter.swift */; };
 		8FDBA39121005FEF002B033E /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBA39021005FEF002B033E /* UserDataModel.swift */; };
-		8FDBA3932100600C002B033E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDBA3922100600C002B033E /* UserRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		8F1A8EA520F887F5000DF4B4 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		8F1A8EA720F88947000DF4B4 /* UserInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPresenter.swift; sourceTree = "<group>"; };
 		8FDBA39021005FEF002B033E /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
-		8FDBA3922100600C002B033E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				8FDBA39021005FEF002B033E /* UserDataModel.swift */,
-				8FDBA3922100600C002B033E /* UserRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,7 +173,6 @@
 			files = (
 				8FDBA39121005FEF002B033E /* UserDataModel.swift in Sources */,
 				8F1A8E9420F8643A000DF4B4 /* RegisterViewController.swift in Sources */,
-				8FDBA3932100600C002B033E /* UserRepository.swift in Sources */,
 				8F1A8EA820F88947000DF4B4 /* UserInfoPresenter.swift in Sources */,
 				8F1A8EA420F882D5000DF4B4 /* UserInfoViewController.swift in Sources */,
 				8F1A8E9220F8643A000DF4B4 /* AppDelegate.swift in Sources */,
