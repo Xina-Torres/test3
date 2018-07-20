@@ -30,151 +30,72 @@ enum RegisterTextField {
     case gender
 }
 class RegisterPresenter{
-    var firstName: String?
-    var middleName: String?
-    var lastName: String?
-    var address: String?
-    var age: String?
-    var height: String?
-    var weight: String?
-    var birthday: String?
-    var gender: String?
+
     var userDataModel: UserDataModel
+
     var view: RegisterPresenterDelegate
     required init(view: RegisterPresenterDelegate, userDataModel: UserDataModel){
         self.view = view
         self.userDataModel = userDataModel
     }
     func register(){
-        if firstName == nil || firstName?.isEmpty == true{
-            view.didFailGettingFirstName()
-        }else{
-            setValues(registerTextField: RegisterTextField.firstName, input: firstName!)
-        }
-        if middleName == nil || middleName?.isEmpty == true{
-            view.didFailGettingMiddleName()
-        }else{
-            setValues(registerTextField: RegisterTextField.middleName, input: middleName!)
-        }
-        if lastName == nil || lastName?.isEmpty == true{
-            view.didFailGettingLastName()
-        }else{
-            setValues(registerTextField: RegisterTextField.lastName, input: lastName!)
-        }
-        if address == nil || address?.isEmpty == true{
-            view.didFailGettingAddress()
-        }else{
-            setValues(registerTextField: RegisterTextField.address, input: address!)
-        }
-        if age == nil || age?.isEmpty == true{
-            view.didFailGettingAge()
-        }else{
-            setValues(registerTextField: RegisterTextField.age, input: age!)
-        }
-        if height == nil || height?.isEmpty == true{
-            view.didFailGettingHeight()
-        }else{
-            setValues(registerTextField: RegisterTextField.height, input: height!)
-        }
-        if weight == nil || weight?.isEmpty == true{
-            view.didFailGettingWeight()
-        }else{
-            setValues(registerTextField: RegisterTextField.weight, input: weight!)
-        }
-        if birthday == nil || birthday?.isEmpty == true{
-            view.didFailGettingBirthday()
-        }else{
-            setValues(registerTextField: RegisterTextField.birthday, input: birthday!)
-        }
-        if gender == nil || gender?.isEmpty == true{
-            view.didFailGettingGender()
-        }else{
-            setValues(registerTextField: RegisterTextField.gender, input: gender!)
-        }
     }
     func setValues(registerTextField: RegisterTextField, input: String){
         switch registerTextField{
         case .firstName:
-            self.firstName = input
+            self.userDataModel.firstName = input
             break
         case .middleName:
-            self.middleName = input
+            self.userDataModel.middleName = input
             break
         case .lastName:
-            self.lastName = input
+            self.userDataModel.lastName = input
             break
         case .address:
-            self.address = input
+            self.userDataModel.address = input
             break
         case .age:
-            self.age = input
+            self.userDataModel.age = input
             break
         case .height:
-            self.height = input
+            self.userDataModel.height = input
             break
         case .weight:
-            self.weight = input
+            self.userDataModel.weight = input
             break
         case .birthday:
-            self.birthday = input
+            self.userDataModel.birthday = input
             break
         case .gender:
-            self.gender = input
+            self.userDataModel.gender = input
             break
         }
     }
     func getFirstName() -> String{
-        if let firstName = firstName{
-            return firstName
-        }
-        return "nil"
+        return userDataModel.firstName
     }
     func getMiddleName() -> String{
-        if let middleName = middleName{
-            return middleName
-        }
-        return "nil"
+        return userDataModel.middleName
     }
     func getLastName() -> String{
-        if let lastName = lastName{
-            return lastName
-        }
-        return "nil"
+        return userDataModel.lastName
     }
     func getAddress() -> String{
-        if let address = address{
-            return address
-        }
-        return "nil"
+        return userDataModel.address
     }
     func getAge() -> String{
-        if let age = age{
-            return age
-        }
-        return "nil"
+        return userDataModel.age
     }
     func getHeight() -> String{
-        if let height = height{
-            return height
-        }
-        return "nil"
+        return userDataModel.height
     }
     func getWeight() -> String{
-        if let weight = weight{
-            return weight
-        }
-        return "nil"
+        return userDataModel.weight
     }
     func getBirthday() -> String{
-        if let birthday = birthday{
-            return birthday
-        }
-        return "nil"
+        return userDataModel.birthday
     }
     func getGender() -> String{
-        if let gender = gender{
-            return gender
-        }
-        return "nil"
+        return userDataModel.gender
     }
 }

@@ -21,9 +21,10 @@ class UserInfoViewController: UIViewController, UserInfoViewControllerDelegate {
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         firstNameLabel.text = userDataModel.firstName
         middleNameLabel.text = userDataModel.middleName
         lastNameLabel.text = userDataModel.lastName

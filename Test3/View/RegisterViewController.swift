@@ -40,8 +40,6 @@ class RegisterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSegue"{
             let userInfoViewController = segue.destination as! UserInfoViewController
-            userInfoViewController.presenter = UserInfoPresenter(view: self as! UserInfoPresenterDelegate, userDataModel: registerPresenter.userDataModel)
-//            userInfoViewController.presenter = UserInfoPresenter(view: userInfoViewController, userDataModel: registerPresenter.userDataModel)
                 userInfoViewController.userDataModel = registerPresenter.userDataModel
             }
     }
