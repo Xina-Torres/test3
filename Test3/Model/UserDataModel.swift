@@ -17,4 +17,5 @@ class UserDataModel{
     var weight: String = ""
     var birthday: String = ""
     var gender: String = ""
+    
 }
