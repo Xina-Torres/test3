@@ -23,7 +23,7 @@ class UserInfoViewController: UIViewController, UserInfoViewControllerDelegate {
     @IBOutlet weak var genderLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-       var userInfoPresenter = UserInfoPresenter(view: self as! UserInfoPresenterDelegate, userDataModel: userDataModel!)
+       
         firstNameLabel.text = userDataModel.firstName
         middleNameLabel.text = userDataModel.middleName
         lastNameLabel.text = userDataModel.lastName
